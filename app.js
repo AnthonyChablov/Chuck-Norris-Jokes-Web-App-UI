@@ -15,24 +15,25 @@ buttonUI.addEventListener('click',(e)=>{
     xhr.onload = function(){
         if (this.status === 200){
             let response = JSON.parse(this.responseText);
-            console.log(response);
-            let output = '';
-           
+            // output div
+            let output = document.createElement('div');
+            output.classList.add('col')
+            output.id='target';
+
+
+            // output h2
+            let h2 = document.createElement('h2');
+            h2.innerText = `Joke #${number}`;
+
+
             // Upon success we append to var 
             if(response.type ==='success'){
-                
-                response.value.forEach((joke)=>{
-                    output +=
-                    `<div class="col" id="target">
-                        <h2>Joke #${number}</h2>
-                        <p>${joke.joke}</p>
-                    </div>`;
-                });
-                number+=1;
-            }else{
-                output='<p>Error</p>';
+                let textnode = document.createTextNode(`${response.value[0].joke}`);
+                output.appendChild(h2);
+                output.appendChild(textnode);
+                insertUI.appendChild(output).scrollIntoView({behavior: "smooth", block: "center"});
+                number++;
             }
-            insertUI.innerHTML=output;
         }
     }
 

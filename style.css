@@ -1,5 +1,6 @@
 *,*::after,*::before{
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body{
@@ -20,14 +21,15 @@ body{
     cursor: crosshair;
 }
 .wrapper__content{
-    
     margin-bottom: 20px;
 }
 .title{
     font-size: 55px;
-    margin-bottom: 0px;
-    animation: color-change 4s infinite;
+    margin-bottom: 6.9px;
+
+    animation-fill-mode: backwards;
 }
+
 @keyframes color-change {
     20% { filter:brightness(123%); }    
 }
@@ -106,12 +108,35 @@ body{
     text-transform: capitalize;
     border-radius: 100px;
 
-    padding: 7.6px 9.8px 6.5px 9.8px;
+    padding: 7.6px 9.8px 5px 9.8px;
 
     position: fixed;
     bottom: 20px;
     right: 30px;
+
+   
 }
+
+
+
 .scroll-up:hover{
     filter: brightness(80%);
+    
+}
+
+.col{
+    animation: color-change 4s 1;
+    animation: moveInBottom 2s ease-out;
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
 }
