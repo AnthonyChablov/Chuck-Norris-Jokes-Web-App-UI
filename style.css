@@ -24,15 +24,15 @@ body{
     margin-bottom: 20px;
 }
 .title{
-    font-size: 55px;
+    font-size: 56px;
     margin-bottom: 6.9px;
 
     animation-fill-mode: backwards;
 }
-
 @keyframes color-change {
     20% { filter:brightness(123%); }    
 }
+
 .wrapper__content p {
     margin-top: 0px;
     margin-bottom: 40px;
@@ -48,6 +48,9 @@ body{
     color: #373e98;
     padding: 10px 50px;
     border-radius: 100px;    
+}
+.btn-2{
+    margin-left: 1%;
 }
 
 .btn:hover{
@@ -113,15 +116,14 @@ body{
     position: fixed;
     bottom: 20px;
     right: 30px;
-
-   
 }
-
-
-
 .scroll-up:hover{
-    filter: brightness(80%);
+    filter: brightness(83%);
+    box-shadow: 10px 5px 5px #2a2a2a;
     
+}
+#hide{
+    display: none;
 }
 
 .col{

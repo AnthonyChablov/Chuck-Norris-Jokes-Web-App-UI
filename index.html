@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
     integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ==" 
     crossorigin="anonymous" 
@@ -14,14 +13,18 @@
     <title>The Chuck Norris Joke Generator</title>
 </head>
 <body>
-
     <!--Wrapper container-->
     <div class="wrapper">
         <div class="container">
             <div class="wrapper__content">
                 <h1 class="title">The Chuck Norris Joke Generator</h1>
                 <p>By: Anthony Chablov</p>
+
+                <!-- Get A Joke BTN 1 -->
                 <a href="#" class="btn">Get A Joke</a>
+
+                <!-- Clear Btn that appears when get jokes clicked -->
+                <a href="#" class="btn btn-2" id="hide">Clear</a>
             </div>
         </div>
     </div>
@@ -31,7 +34,6 @@
         <div class="container">
             <div class="row">
                 <!-- <img src="images/png-transparent-chuck-norris-actor-chuck-norris-celebrities-face-human.png" alt="chuck-norris"> -->
-                
             </div>
         </div>
     </div>
@@ -41,7 +43,7 @@
         <div class="container">
             <div class="row">
                 <div class="scroll">
-                    <a href="#" class="scroll-up">
+                    <a href="#" class="scroll-up" id="hide">
                         <img src="images/small.png" alt="scroll-up">
                     </a>
                 </div>
