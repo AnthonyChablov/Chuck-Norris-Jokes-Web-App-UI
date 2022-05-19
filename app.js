@@ -9,7 +9,7 @@ buttonUI.addEventListener('click',(e)=>{
     const xhr = new XMLHttpRequest();
 
     //  GET request to that api for chuck norris joke       
-    xhr.open('GET', `http://api.icndb.com/jokes/random/${number}`, true);
+    xhr.open('GET', `https://api.icndb.com/jokes/random/${number}`, true);
 
     //  Upon the object being loaded we check status and response type is successful
     xhr.onload = function(){
