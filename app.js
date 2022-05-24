@@ -3,6 +3,7 @@ let buttonUI = document.querySelector('.btn');
 let insertUI = document.querySelector('.row');
 let btnClearUI = document.querySelector('.btn-2');
 let btnScrollUI = document.querySelector('.scroll-up');
+let rootUI= document.documentElement;
 
 let number=1;
 
@@ -37,8 +38,13 @@ buttonUI.addEventListener('click',(e)=>{
                 output.appendChild(h2);
                 output.appendChild(textnode);
                 insertUI.appendChild(output).scrollIntoView({behavior: "smooth", block: "center"});
+               
+                // make the button appear below once two jokes are clicked
+                if(number>=2){
+                    buttonUI.classList.add('btn-move');
+                    btnClearUI.classList.add('btn-move-2')
+                }
                 number++;
-
                 // unhide elements
                 btnClearUI.removeAttribute('id');
                 btnScrollUI.removeAttribute('id');
@@ -52,5 +58,16 @@ buttonUI.addEventListener('click',(e)=>{
 
 btnClearUI.addEventListener('click', (e)=>{
     document.querySelectorAll('#target').forEach((elem)=> elem.remove());
+    buttonUI.id = '';    
+    buttonUI.classList.remove('btn-move');
+    btnClearUI.classList.remove('btn-move-2');
+
+    // scrolling to top after jokes elems removed
+    rootUI.scrollTo({top: 0,behavior: "smooth"})
+    
     number = 1;
 })
+
+function revert(){
+
+}
