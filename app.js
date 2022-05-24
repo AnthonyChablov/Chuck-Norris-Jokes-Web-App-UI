@@ -6,7 +6,6 @@ let btnScrollUI = document.querySelector('.scroll-up');
 let rootUI= document.documentElement;
 
 let number=1;
-
 // adding event listeners
 buttonUI.addEventListener('click',(e)=>{
     //  Instantiate new instance of XMLHTTPREQUEST obj
@@ -41,8 +40,9 @@ buttonUI.addEventListener('click',(e)=>{
                
                 // make the button appear below once two jokes are clicked
                 if(number>=2){
+
                     buttonUI.classList.add('btn-move');
-                    btnClearUI.classList.add('btn-move-2')
+                    btnClearUI.classList.add('btn-move-2');
                 }
                 number++;
                 // unhide elements
@@ -55,6 +55,15 @@ buttonUI.addEventListener('click',(e)=>{
     xhr.send();
     e.preventDefault();
 })
+
+if(number===2){
+    buttonUI.classList.add('animate-this');
+    btnClearUI.classList.add('animate-this');
+    //buttonUI.classList.remove('animate-this');
+    //btnClearUI.classList.remove('animate-this');
+}
+
+
 
 btnClearUI.addEventListener('click', (e)=>{
     document.querySelectorAll('#target').forEach((elem)=> elem.remove());
